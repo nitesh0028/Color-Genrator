@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator
+    </title>
+</head>
+   <style>
+   
+   @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: "Rubik", sans-serif;
+   }
+
+
+   .main_box{
+    box-shadow: -5px -5px 12px #e8ecf3, 5px 5px 12px rgba(0,0,0,0.14);
+    width: 300px;
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    gap: 8px;
+
+    
+   }
+
+   .color_box{
+    /* border: 1px solid #000; */
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    /* background-color: #a1b5c1; */
+    transition: all 0.35s;
+   }
+
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:#e8ecf3;
+   }
+
+
+   #click_me_id{
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 10px 0px;
+    letter-spacing: 5px;
+    cursor: pointer;
+   }
+
+
+   #click_me_id:hover{
+    background: #272525;
+   }
+
+   .color_no{
+    font-size:20px;
+   }
+   
+   </style>
+
+<body>
+    <div class="main_box">
+
+        <div class="color_box" id="colr_bx">
+
+
+        </div>
+
+        <div class="color_no">
+            #fa0919
+        </div>
+
+        <button id="click_me_id">
+            CLICK ME
+        </button>
+
+
+    </div>
+
+
+ <script>
+
+
+
+
+
+    const get_color = () =>{
+    // hex code 
+
+    // we use this to get hexadecimal number
+    const random_number = Math.floor(Math.random() * 16777215);
+
+    // where random number is converting into hex
+  let random_color = '#' + random_number.toString(16);
+
+   // target color box
+    document.querySelector('.color_box').style.backgroundColor = random_color;
+    
+// tagert color no
+    document.querySelector('.color_no').innerHTML = random_color;
+
+  }
+
+
+  let click_btn = document.getElementById('click_me_id');
+
+  click_btn.addEventListener('click',get_color);
+
+  get_color();
+
+  
+
+
+
+ </script>
+    
+</body>
+</html>
